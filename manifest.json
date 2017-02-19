@@ -2,12 +2,13 @@
   "manifest_version": 2,
 
   "name": "Lyft Ride Scheduling extension for Google Calendar",
-  "description": "This extension allows you to schedule a ride from future events",
+  "description": "This extension allows you to schedule a ride for future events",
   "version": "1.0",
 
   "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_icon": "icons/icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Click here!"
   },
   "permissions": [
     "activeTab",
