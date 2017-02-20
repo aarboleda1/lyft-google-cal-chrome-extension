@@ -8,20 +8,20 @@
 			  'access_url': 'https://www.google.com/accounts/OAuthGetAccessToken',
 			  'consumer_key': 'anonymous',
 			  'consumer_secret': 'anonymous',
-			  'scope': 'http://www.google.com/calendar/feeds/',
+			  'scope': 'http://www.google.com/calendar/',
 			  'app_name': 'Add lyft rides to google calendar events'
 			});
-			
+
 			oauth.authorize(function() {});
 			
-			function callback(resp, xhr) {
-				if (resp.indexOf("event.confirmed") != -1)
-					alert("Your event was successfully added!");
-				else if (resp.length == 0)
-					alert("Sorry, an error occurred while adding your event. We are working on it.");
-				else
-					alert("Sorry, an error occurred while adding your event. If the following error mentions authorization, try refreshing the page and adding your event again: " + resp);
-			};
+    function callback(resp, xhr) {
+      if (resp.indexOf("event.confirmed") != -1)
+        alert("Your event was successfully added!");
+      else if (resp.length == 0)
+        alert("Sorry, an error occurred while adding your event. We are working on it.");
+      else
+        alert("Sorry, an error occurred while adding your event. If the following error mentions authorization, try refreshing the page and adding your event again: " + resp);
+    };
 			
 	 	if (request.actionType == "popOverCleared") { //Then add the event
 			var url = 'http://www.google.com/calendar/feeds/default/private/full';
