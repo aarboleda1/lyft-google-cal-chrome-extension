@@ -11,19 +11,24 @@ LICENSE file.
       body {
         color: black;
         width: 300px;
+        height: 300px;
       }
     </style>
     
     <script type="text/javascript" src="chrome_ex_oauthsimple.js"></script>
     <script type="text/javascript" src="chrome_ex_oauth.js"></script>
-    <script type="text/javascript" src="onload.js"></script>
-    
-    <script src="src/eventPage.js"></script>
-
+    <script type="text/javascript" src="onload.js"></script>    
   </head>
-  <body>
+  <body onload="getEventList()">
+    <button id="getEvents">GET EVENTS</button>
+
+
+
+
     <div id="accept_lang">
       <span id="languageSpan"></span>
     </div>
+  <script src="src/eventPage.js"></script>
+    
   </body>
 </html>
