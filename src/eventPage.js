@@ -7,14 +7,23 @@ body.onclick = function () {
 function getEventList (events) {
 	var eventList = [];	
 	for (var event in events) {
-		eventList.push(events[event].innerHTML);			
+		console.log(events[event].innerHTML);
+		var listNode = document.createElement('LI');
+		// var text = eventList.push(events[event].innerHTML);			
+		// var textNode = document.createTextNode(text);
+		// document.getElementById("event-list").appendChild(listNode);
+		// console.log(textNode);
 	}
-	console.log(eventList);
+	return eventList;
 }
 
 document.getElementById('getEvents').onclick = function (e) {
-	console.log(events);
-	document.body.innerHTML +='<div style="position:absolute;width:100%;height:100%;opacity:0.3;z-index:100;background:#000;"></div>';
+	console.log('hello world');
+	var events = document.getElementsByClassName("evt-lk");
+	var eList = getEventList(events);
+	console.log(eList);
+	document.body.innerHTML +=
+		'<ul><li>Hello world </li></ul>'
 	console.log('helo world');
 }
 
