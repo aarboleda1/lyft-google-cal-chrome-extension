@@ -1,9 +1,9 @@
-var log = console.log;
+let log = console.log;
 function showModal () {
 
 }
 function lyftModal (button, eventModal) {
-	var lyftModal = document.createElement('DIV');
+	let lyftModal = document.createElement('DIV');
 	lyftModal.className += 'lyftModal';
 	lyftModal.setAttribute('id', eventModal[0].id);
 	lyftModal.style.display = 'none';
