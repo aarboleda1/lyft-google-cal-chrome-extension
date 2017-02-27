@@ -2,6 +2,8 @@ let log = console.log;
 function showModal () {
 
 }
+
+// window.opennewtab
 function lyftModal (button, eventModal) {
 	let lyftModal = document.createElement('DIV');
 	lyftModal.className += 'lyftModal';
@@ -28,15 +30,17 @@ function lyftModal (button, eventModal) {
 	modalContent.style.border = '80%';
 	lyftModal.appendChild(modalContent);
 	log(lyftModal, modalContent, 'IS THE STUFF');
-	setTimeout(showModal, 1000)
-	
+	setTimeout(showModal, 1000)	
 }
 
 function insertLyftButton (eventModal) {
 	var button = document.createElement('BUTTON');
 	var buttonText = document.createTextNode('Schedule Ride');
 	button.addEventListener('click', function () {
-		lyftModal(this, eventModal);
+		// console.log('clicked on button');
+		// lyftModal(this, eventModal);
+		var lyft = 'https://www.lyft.com';
+		window.open(lyft,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;
 	})
 	button.appendChild(buttonText);	
 	eventModal[0].appendChild(button);	
