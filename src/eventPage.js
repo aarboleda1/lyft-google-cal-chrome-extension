@@ -3,6 +3,7 @@ function showModal () {
 
 }
 
+
 // window.opennewtab
 function lyftModal (button, eventModal) {
 	let lyftModal = document.createElement('DIV');
@@ -37,20 +38,53 @@ function insertLyftButton (eventModal) {
 	var button = document.createElement('BUTTON');
 	var buttonText = document.createTextNode('Schedule Ride');
 	button.addEventListener('click', function () {
-		// console.log('clicked on button');
 		// lyftModal(this, eventModal);
-		var lyft = 'https://www.lyft.com';
-		window.open(lyft,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;
+		// var lyft = 'https://www.lyft.com';
+		// window.open(lyft,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;
+
+		// var context = this;
+		console.log(window.token, 'TOEKKNENNAFEIAOJFOAIJEO');
+		$.ajax({
+        url: 'https://api.lyft.com/v1/rides',
+				beforeSend: function(xhr) { 
+    			xhr.setRequestHeader('Authorization','Bearer ' + window.token)
+    		}, 
+				data: '{"ride_type" : "lyft", "origin" : {"lat" : 37.7763, "lng" : -122.3918 } }', 
+				type: 'POST',
+				contentType: 'application/json',
+		})
+		.done(function (res) {
+			console.log(res);
+		});
+
+		// curl -X POST -H "Authorization: Bearer <access_token> " \
+    //  -H "Content-Type: application/json" \
+    //  -d '{"ride_type" : "lyft", "origin" : {"lat" : 37.7763, "lng" : -122.3918 } }' \
+    //  'https://api.lyft.com/v1/rides'
+		
 	})
 	button.appendChild(buttonText);	
 	eventModal[0].appendChild(button);	
 } 
 
-
 // get all events on on the page and add id's on them so when we click
 function load () {
 	let events = document.getElementsByClassName("cbrd");
 	let event;
+	var context = this;
+	$.ajax({
+			url: 'https://api.lyft.com/oauth/token',
+			beforeSend: function(xhr) { 
+				xhr.setRequestHeader("Authorization", "Basic " + btoa("kK1f4CSvQe4r:IAPC8V3BrigGh3nAmXNNu5xuzQ2Ptzfy")); 
+			}, 
+			data: '{"grant_type": "client_credentials", "scope": "public"}',
+			type: 'POST',
+			contentType: 'application/json',
+	})
+	.done(function (res) {
+		window.token = res.access_token;
+		console.log(context.token);
+	});
 	
 	for (let i = 0; i < events.length ; i++) {
 		event = events[i];
