@@ -9,6 +9,7 @@
           "https://calendar.google.com/calendar/*"
       ],
       "js": [
+          "jquery-3.1.1.min.js",
           "src/eventPage.js"
       ],
       "run_at": "document_end"
@@ -25,6 +26,7 @@
     "https://ride.lyft.com/",
     "https://www.google.com/calendar/*",
     "https://calendar.google.com/*",
+    "https://uber.com/*",
     "activeTab",
     "tabs"
   ]
