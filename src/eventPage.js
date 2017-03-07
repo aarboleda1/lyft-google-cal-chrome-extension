@@ -42,7 +42,7 @@ function insertLyftButton (eventModal) {
 		// var lyft = 'https://www.lyft.com';
 		// window.open(lyft,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;
 
-		// var context = this;
+		
 		console.log(window.token, 'TOEKKNENNAFEIAOJFOAIJEO');
 		$.ajax({
         url: 'https://api.lyft.com/v1/rides',
