@@ -1,5 +1,4 @@
 function requestRide(origin, destination) {
-	console.log('requesting a ride!!');
 	// $.ajax({
 	//     url: 'https://api.lyft.com/v1/rides',
 	// 		beforeSend: function(xhr) { 
@@ -33,9 +32,11 @@ Add event listener to button to authenticate user into app
 function insertLyftButton (eventModal) {
 	var button = document.createElement('button');
 	var buttonText = document.createTextNode('Schedule Ride');
+	var input = document.createElement("input");
 	button.appendChild(buttonText);	
 	button.addEventListener('click', requestRide);
-	eventModal[0].appendChild(button);
+	// eventModal[0].appendChild(button);
+	eventModal[0].appendChild(input);
 	// eventModal[0].appendChild('<input type="text" placeholder="type">');	
 	authorizeApplication();
 } 
