@@ -13,7 +13,7 @@ First, fork this repository.
 Next, clone this repository to your desktop to make changes.
 
 ```sh
-$ git clone {YOUR_REPOSITORY_CLONE_URL}
+$ git clone https://github.com/aarboleda1/lyft-google-cal-chrome-extension.git
 $ cd lyft-google-cal-chrome-extension
 ```
 
